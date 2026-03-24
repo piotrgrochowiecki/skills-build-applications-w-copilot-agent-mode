@@ -26,11 +26,19 @@ SECRET_KEY = 'django-insecure-h=fl5_&%2pfuo9a25*=-v&^&q%(9=jd08v4b)tv+zqdq66cnu6
 DEBUG = True
 
 
-# Allow all hosts for development and Codespaces
 import os
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '*']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 if os.environ.get('CODESPACE_NAME'):
     ALLOWED_HOSTS.append(f"{os.environ.get('CODESPACE_NAME')}-8000.app.github.dev")
+
+# Trust the forwarded HTTPS headers from the Codespaces proxy
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+USE_X_FORWARDED_HOST = True
+
+# Allow CSRF for Codespace and localhost origins
+CSRF_TRUSTED_ORIGINS = ['http://localhost:8000', 'http://127.0.0.1:8000']
+if os.environ.get('CODESPACE_NAME'):
+    CSRF_TRUSTED_ORIGINS.append(f"https://{os.environ.get('CODESPACE_NAME')}-8000.app.github.dev")
 
 
 # Application definition

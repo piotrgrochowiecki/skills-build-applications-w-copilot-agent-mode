@@ -1,3 +1,4 @@
+// https://REPLACE_THIS_WITH_YOUR_CODESPACE_NAME-8000.app.github.dev/api/teams
 import React, { useState, useEffect } from 'react';
 
 const API_BASE_URL = process.env.REACT_APP_CODESPACE_NAME

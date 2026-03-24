@@ -1,0 +1,185 @@
+/* OctoFit Tracker – global styles */
+
+/* ── Colour palette ──────────────────────────────────────────────────────────
+   Primary blue  : #0d6efd   Active / brand
+   Accent teal   : #0dcaf0   Gradient end
+   Dark navy     : #0a1628   Navbar / footer
+   Light bg      : #eef2ff   Page background
+   Card bg       : #ffffff
+   Text default  : #1e2940
+   Muted text    : #6c757d
+   ──────────────────────────────────────────────────────────────────────── */
+
+body {
+  background-color: #eef2ff;
+  color: #1e2940;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Navbar ─────────────────────────────────────────────────────────────── */
+.navbar.octofit-nav {
+  background: linear-gradient(90deg, #0a1628 0%, #0d2150 100%) !important;
+  border-bottom: 3px solid #0d6efd;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #ffffff !important;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-brand img.octofit-logo {
+  height: 36px;
+  width: auto;
+  border-radius: 6px;
+  box-shadow: 0 0 0 2px rgba(13,110,253,0.4);
+}
+
+.nav-link {
+  color: rgba(255,255,255,0.8) !important;
+  transition: color 0.15s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff !important;
+}
+
+/* Active nav link indicator */
+.nav-link.active {
+  color: #ffffff !important;
+  font-weight: 600;
+  border-bottom: 2px solid #0dcaf0;
+}
+
+/* Page content wrapper */
+.page-content {
+  flex: 1;
+}
+
+/* ── Headings ────────────────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  color: #0a1628;
+  font-weight: 700;
+}
+
+/* ── Links ───────────────────────────────────────────────────────────────── */
+a:not(.btn):not(.nav-link):not(.navbar-brand) {
+  color: #0d6efd;
+  text-decoration: underline dotted;
+}
+
+a:not(.btn):not(.nav-link):not(.navbar-brand):hover {
+  color: #0a58ca;
+  text-decoration: underline;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────────────── */
+.btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.btn-primary:hover {
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+}
+
+.btn-light {
+  background-color: #ffffff;
+  color: #0a1628;
+  border-color: rgba(255,255,255,0.6);
+  font-weight: 600;
+}
+
+.btn-light:hover {
+  background-color: #e9f0ff;
+  color: #0d6efd;
+}
+
+/* ── Section card ────────────────────────────────────────────────────────── */
+.octofit-card {
+  border: none;
+  border-radius: 0.6rem;
+  box-shadow: 0 4px 14px rgba(13, 30, 80, 0.1);
+  overflow: hidden;
+}
+
+.octofit-card .card-header {
+  background: linear-gradient(90deg, #0d6efd 0%, #0dcaf0 100%);
+  color: #fff;
+  padding: 0.8rem 1.25rem;
+}
+
+.octofit-card .card-header h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* ── Tables ──────────────────────────────────────────────────────────────── */
+.octofit-table thead th {
+  background: linear-gradient(90deg, #0a1628 0%, #0d2150 100%);
+  color: #e0e8ff;
+  white-space: nowrap;
+  border-bottom: 2px solid #0d6efd;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.octofit-table tbody tr:hover {
+  background-color: #dce8ff;
+}
+
+.octofit-table tbody td {
+  vertical-align: middle;
+  color: #1e2940;
+}
+
+/* ── Footer ──────────────────────────────────────────────────────────────── */
+footer.octofit-footer {
+  background: linear-gradient(90deg, #0a1628 0%, #0d2150 100%) !important;
+  color: rgba(255,255,255,0.55) !important;
+  border-top: 2px solid #0d6efd;
+  font-size: 0.82rem;
+}
+
+/* ── Hero section on home page ───────────────────────────────────────────── */
+.hero-section {
+  background: linear-gradient(135deg, #0a1628 0%, #0d6efd 60%, #0dcaf0 100%);
+  color: #fff;
+  border-radius: 0.6rem;
+  padding: 3.5rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 24px rgba(13, 110, 253, 0.35);
+}
+
+/* ── Quick-link cards on home page ──────────────────────────────────────── */
+.quick-card {
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  cursor: pointer;
+  border-width: 2px !important;
+  border-radius: 0.6rem;
+  box-shadow: 0 2px 8px rgba(13, 30, 80, 0.08);
+  background-color: #ffffff;
+}
+
+.quick-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(13, 110, 253, 0.18);
+}
+
+.quick-card .card-body {
+  padding: 1.5rem;
+}
+
